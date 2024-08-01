@@ -1,0 +1,40 @@
+.product-container {
+    padding: 20px;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+.title-book{
+    font-weight: 800;
+    font-size: 38px !important;
+    color: #03151E;
+}
+.descr-book{
+    color: #03151E;
+    font-weight: 600;
+}
+.btn-new{
+    background-color: #C7ECF1!important;
+    color: #03151E !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    padding: 8px;
+}
+
+@media (min-width: 992px) {
+    .product-container .row {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .product-container .col-lg-4,
+    .product-container .col-lg-6 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+.form-label{
+    font-size: 18px!important;
+}
