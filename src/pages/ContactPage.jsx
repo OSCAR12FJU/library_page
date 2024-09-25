@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import { createContact } from "../api/api";
 
-function ContactPage (){
+const ContactPage = () =>{
     const [formData, setFormData] = useState({
       name: '',
       author: '',
@@ -34,33 +35,26 @@ function ContactPage (){
         if(formData.image){
             data.append('image', formData.image);
         }
+        try{
+          const response = await createContact(data);
+            if (response.ok) {
+            console.log('Información enviada correctamente');}
 
-        try {
-          const response = await fetch('http://localhost:8080/create-book', {
-            method: 'POST',
-            body: data,
+          setFormData({
+            name: '',
+            author: '',
+            description: '',
+            pages:'',
+            published:'',
+            image:null
           });
-          if (response.ok) {
-            console.log('Información enviada correctamente');
-          } else {
-            console.error('Problema en el envio de información');
-            console.log(response)
-          }
-        } catch (error) {
-          console.error('Error:', error);
-        }
-        console.log(formData)
-        setFormData({
-          name: '',
-          author: '',
-          description: '',
-          pages:'',
-          published:'',
-          image:null
-        })
-        
 
-        };
+          console.log("Formulario enviado y reseteado")
+
+        }catch(error){
+          console.error('Error al cargar los datos', error);
+          }};
+    
 
     return (
         <div id="wrapper">
@@ -99,29 +93,3 @@ function ContactPage (){
 }
 
 export default ContactPage;
-
-
-
-
-
-       
-
-
-
-// {/* <div class="form-row">
-// <div class="form-group col-md-6">
-//   <label for="inputCity">City</label>
-//   <input type="text" class="form-control" id="inputCity">
-// </div>
-// <div class="form-group col-md-4">
-//   <label for="inputState">State</label>
-//   <select id="inputState" class="form-control">
-//     <option selected>Choose...</option>
-//     <option>...</option>
-//   </select>
-// </div>
-// <div class="form-group col-md-2">
-//   <label for="inputZip">Zip</label>
-//   <input type="text" class="form-control" id="inputZip">
-// </div>
-// </div> */}

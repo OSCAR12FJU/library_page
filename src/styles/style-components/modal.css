@@ -1,0 +1,69 @@
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    width: 600px;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: red!important;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .image-container {
+    margin-bottom: 15px;
+  }
+  
+  .modal-book-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* .book-details {
+    padding-left: 0px;
+  } */
+  
+  /* Estilos para pantallas grandes (escritorio) */
+  @media (min-width: 992px) {
+    .modal-body {
+      flex-direction: row;
+    }
+  
+    .image-container {
+      flex: 1;
+      margin-right: 20px;
+    }
+  
+    .book-details {
+      flex: 2;
+      padding-left: 20px;
+    }
+  }
+  

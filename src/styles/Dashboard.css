@@ -158,3 +158,9 @@ i.fa.fa-bars {
   .col-sm-3.text-right {
     padding-right: 1.8rem;
 }
+
+.no-bullets{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
